@@ -1,0 +1,63 @@
+section {
+    &.top {
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+
+        >.container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 2rem;
+
+            .btn {
+                box-shadow: 6px 8px 0 rgba(black, .25);
+
+                &:hover {
+                    box-shadow: 8px 10px 0 rgba(black, .25);
+                }
+            }
+        }
+
+        .top {
+            &-download {
+                padding: 1rem 0;
+                background-color: rgba($white, .5);
+                backdrop-filter: blur(10px);
+            }
+        }
+    }
+
+    &.video {
+        padding: 10vh 0;
+
+        .video {
+            &-embed {
+                position: relative;
+
+                .embed-responsive {
+                    border-radius: 1rem;
+                    box-shadow: 0 1em 1em rgba(black, .15);
+                }
+            }
+
+            &-img {
+                position: absolute;
+
+                &-left {
+                    top: 0;
+                    left: 0;
+                }
+
+                &-right {
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
