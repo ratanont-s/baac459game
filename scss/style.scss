@@ -4,16 +4,13 @@
 @import './footer';
 @import './landing';
 
-// main {
-//     position: relative;
+// body {
+//     padding: 1em;
+//     @include gradient-directional($start-color: $primary, $end-color: #98d936, $deg: 45deg);
 
-//     &::after {
-//         content: '';
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         border: 1rem solid $primary;
+//     main {
+//         border-top-left-radius: 1em;
+//         border-top-right-radius: 1em;
+//         overflow: hidden;
 //     }
 // }

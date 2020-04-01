@@ -1,34 +1,93 @@
 section {
     &.top {
-        min-height: 100vh;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
+        position: relative;
 
-        >.container {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            padding-bottom: 2rem;
+        .top {
+            &-bg {
+                width: 100%;
+            }
 
-            .btn {
-                box-shadow: 6px 8px 0 rgba(black, .25);
+            &-content {
+                .btn {
+                    box-shadow: 6px 8px 0 rgba(black, .25);
 
-                &:hover {
-                    box-shadow: 8px 10px 0 rgba(black, .25);
+                    &:hover {
+                        box-shadow: 8px 10px 0 rgba(black, .25);
+                    }
+                }
+
+            }
+
+            &-download {
+                padding: 1rem 0;
+                background-color: rgba($white, .25);
+                backdrop-filter: blur(10px);
+
+                .app {
+                    display: flex;
+                    align-items: center;
+
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: 1.5rem;
+                    }
+
+                    &-icon {
+                        text-align: center;
+                        margin-right: .5rem;
+
+                        @include media-breakpoint-up(lg) {
+                            margin-right: 1.5rem;
+                        }
+
+                        img {
+                            width: 5rem;
+                            height: 5rem;
+                            object-fit: cover;
+                            border-radius: 1rem;
+                            margin-bottom: 0.5rem;
+                            box-shadow: 0 .25rem .25rem rgba(black, .15);
+                        }
+                    }
+
+                    &-detail {
+                        line-height: normal;
+
+                        @include media-breakpoint-up(lg) {
+                            font-size: 1.25rem;
+                        }
+
+                        strong {
+                            display: block;
+                            font-size: 1.25em;
+                        }
+                    }
                 }
             }
         }
 
-        .top {
-            &-download {
-                padding: 1rem 0;
-                background-color: rgba($white, .5);
-                backdrop-filter: blur(10px);
+        @include media-breakpoint-up(lg) {
+            min-height: 100vh;
+            display: flex;
+
+            .top {
+                &-bg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &-content {
+                    width: 100%;
+                    margin-top: auto;
+                }
             }
+        }
+
+        @include media-breakpoint-down(md) {
+            background-color: $primary;
         }
     }
 
@@ -60,6 +119,14 @@ section {
                 }
             }
         }
+
+        @include media-breakpoint-down(md) {
+            .video {
+                &-img {
+                    display: none;
+                }
+            }
+        }
     }
 
     &.app {
@@ -77,10 +144,52 @@ section {
             background: url('../img/bg-app.png') no-repeat center center/contain;
         }
 
+        .app {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+
+            @include media-breakpoint-down(md) {
+                margin-bottom: 1.5rem;
+            }
+
+            &-icon {
+                text-align: center;
+                margin-right: .5rem;
+
+                @include media-breakpoint-up(lg) {
+                    margin-right: 1rem;
+                }
+
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                    object-fit: cover;
+                    border-radius: 1rem;
+                    margin-bottom: 0.5rem;
+                    box-shadow: 0 .25rem .25rem rgba(black, .15);
+                }
+            }
+
+            &-detail {
+                line-height: normal;
+
+                strong {
+                    display: block;
+                    font-size: 1.25em;
+                }
+            }
+        }
+
         .img {
+            &-qr {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
             &-mascot {
                 @include media-breakpoint-down(md) {
-                    max-height: 250px;
+                    max-height: 200px;
                 }
             }
         }
