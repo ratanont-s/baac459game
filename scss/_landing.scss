@@ -1,197 +1,306 @@
 section {
-    &.top {
-        position: relative;
-
-        .top {
-            &-bg {
-                width: 100%;
-            }
-
-            &-content {
-                .btn {
-                    box-shadow: 6px 8px 0 rgba(black, .25);
-
-                    &:hover {
-                        box-shadow: 8px 10px 0 rgba(black, .25);
-                    }
-                }
-
-            }
-
-            &-download {
-                padding: 1rem 0;
-                background-color: rgba($white, .25);
-                backdrop-filter: blur(10px);
-
-                .app {
-                    display: flex;
-                    align-items: center;
-
-                    @include media-breakpoint-down(md) {
-                        margin-bottom: 1.5rem;
-                    }
-
-                    &-icon {
-                        text-align: center;
-                        margin-right: .5rem;
-
-                        @include media-breakpoint-up(lg) {
-                            margin-right: 1.5rem;
-                        }
-
-                        img {
-                            width: 5rem;
-                            height: 5rem;
-                            object-fit: cover;
-                            border-radius: 1rem;
-                            margin-bottom: 0.5rem;
-                            box-shadow: 0 .25rem .25rem rgba(black, .15);
-                        }
-                    }
-
-                    &-detail {
-                        line-height: normal;
-
-                        @include media-breakpoint-up(lg) {
-                            font-size: 1.25rem;
-                        }
-
-                        strong {
-                            display: block;
-                            font-size: 1.25em;
-                        }
-                    }
-                }
-            }
-        }
-
-        @include media-breakpoint-up(lg) {
-            min-height: 100vh;
-            display: flex;
-
-            .top {
-                &-bg {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-
-                &-content {
-                    width: 100%;
-                    margin-top: auto;
-                }
-            }
-        }
-
-        @include media-breakpoint-down(md) {
-            background-color: $primary;
-        }
-    }
-
-    &.video {
-        padding: 10vh 0;
-
-        .video {
-            &-embed {
-                position: relative;
-
-                .embed-responsive {
-                    margin-bottom: 1.5rem;
-                    border-radius: 1rem;
-                    box-shadow: 0 1em 1em rgba(black, .15);
-                }
-            }
-
-            &-img {
-                position: absolute;
-                top: 0;
-                z-index: -1;
-
-                &-left {
-                    left: 0;
-                }
-
-                &-right {
-                    right: 0;
-                }
-            }
-        }
-
-        @include media-breakpoint-down(md) {
-            .video {
-                &-img {
-                    display: none;
-                }
-            }
-        }
-    }
-
-    &.app {
-        background-color: $light;
-        padding: 10vh 0;
-        position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('../img/bg-app.png') no-repeat center center/contain;
-        }
+  &.top {
+    position: relative;
 
         .app {
-            display: flex;
-            align-items: center;
+          display: flex;
+          align-items: center;
+
+          @include media-breakpoint-down(md) {
             margin-bottom: 1.5rem;
+          }
 
-            @include media-breakpoint-down(md) {
-                margin-bottom: 1.5rem;
+          &-icon {
+            text-align: center;
+            margin-right: 0.5rem;
+
+            @include media-breakpoint-up(lg) {
+              margin-right: 1.5rem;
             }
 
-            &-icon {
-                text-align: center;
-                margin-right: .5rem;
+            img {
+              width: 4rem;
+              height: 4rem;
+              object-fit: cover;
+              border-radius: 1rem;
+              margin-bottom: 0.5rem;
+              box-shadow: 0 0.25rem 0.25rem rgba(black, 0.15);
+            }
+          }
+          &-title {
+            font-size: 0.8rem;
+            line-height: 1;
+          }
 
-                @include media-breakpoint-up(lg) {
-                    margin-right: 1rem;
-                }
+          &-detail {
+            line-height: normal;
 
-                img {
-                    width: 4rem;
-                    height: 4rem;
-                    object-fit: cover;
-                    border-radius: 1rem;
-                    margin-bottom: 0.5rem;
-                    box-shadow: 0 .25rem .25rem rgba(black, .15);
-                }
+            @include media-breakpoint-up(lg) {
+              font-size: 1.25rem;
             }
 
-            &-detail {
-                line-height: normal;
-
-                strong {
-                    display: block;
-                    font-size: 1.25em;
-                }
+            strong {
+              display: block;
+              font-size: 1.25em;
             }
+          }
         }
+    .top {
+      &-bg {
+        width: 100%;
+      }
 
-        .img {
-            &-qr {
-                max-width: 250px;
-                margin: 0 auto;
-            }
+      &-content {
+          position: relative;
+        .btn {
+          box-shadow: 6px 8px 0 rgba(black, 0.25);
 
-            &-mascot {
-                @include media-breakpoint-down(md) {
-                    max-height: 200px;
-                }
-            }
+          &:hover {
+            box-shadow: 8px 10px 0 rgba(black, 0.25);
+          }
         }
+      }
+
+      &-download {
+        padding: 1rem 0;
+        background-color: rgba($white, 0.25);
+        backdrop-filter: blur(10px);
+
+      }
     }
+
+    @include media-breakpoint-up(lg) {
+      min-height: 100vh;
+      display: flex;
+
+      .top {
+        &-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        &-content {
+          width: 100%;
+          margin-top: auto;
+        }
+      }
+      .app{
+          &-icon{
+              img{
+                  width: 5rem;
+                  height: 5rem;
+              }
+          }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      background-color: $primary;
+    }
+  }
+
+  &.video {
+    padding: 10vh 0 0;
+
+    .video {
+      &-embed {
+        position: relative;
+
+        .embed-responsive {
+          margin-bottom: 1.5rem;
+          border-radius: 1rem;
+          box-shadow: 0 1em 1em rgba(black, 0.15);
+          border: .5rem solid $primary;
+        }
+      }
+
+      &-img {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+
+        &-left {
+          left: 0;
+        }
+
+        &-right {
+          right: 0;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      .video {
+        &-img {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.preview {
+      position: relative;
+      color: $white;
+      @include gradient-directional($start-color: $primary, $end-color: #98D936, $deg: 45deg);
+      #particles-js{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+      .bg{
+          &-top{
+            overflow: hidden;
+            text-align: center;
+            margin-top: -1px;
+            padding-bottom: 2rem;
+            svg{
+                filter: drop-shadow(0 .5rem 1rem rgba(black,.16));
+            }
+        }
+        &-bottom{
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: -1px;
+            padding-top: 2rem;
+            svg{
+                transform: scale(-1);
+                filter: drop-shadow(0 -.5rem 1rem rgba(black,.16));
+                .a{
+                    fill: $light;
+                }
+            }
+        }
+      }
+    .mobile {
+      background: $white url("../img/iPhone.svg") no-repeat center center/contain;
+      padding: 2% 10% 2% 12%;
+      box-shadow: $box-shadow;
+      border-radius: 1.25rem;
+      margin-bottom: 1.5rem;
+      &-img {
+        width: 100%;
+        border-radius: 4px;
+      }
+      &-slider {
+        margin-bottom: -6px;
+        &-item {
+          img {
+            border-radius: 4px;
+          }
+        }
+        .slick {
+          &-arrow {
+            top: auto;
+            bottom: 4px;
+            z-index: 1;
+            width: 2rem;
+            height: 2rem;
+            &::before {
+              display: none;
+            }
+          }
+          &-prev {
+            left: 1rem;
+          }
+          &-next {
+            right: 1rem;
+          }
+          &-dots {
+            bottom: -2rem;
+            li button::before {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.app {
+    background-color: $light;
+    padding: 0 0 10vh;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../img/bg-app.png") no-repeat center center/contain;
+    }
+
+    .app {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1.5rem;
+      }
+
+      &-icon {
+        text-align: center;
+        margin-right: 0.5rem;
+
+        img {
+          width: 4rem;
+          height: 4rem;
+          object-fit: cover;
+          border-radius: 1rem;
+          margin-bottom: 0.5rem;
+          box-shadow: 0 0.25rem 0.25rem rgba(black, 0.15);
+        }
+      }
+      &-title {
+        font-size: 0.8rem;
+        line-height: 1;
+      }
+
+      &-detail {
+        line-height: normal;
+
+        strong {
+          display: block;
+          font-size: 1.25em;
+        }
+      }
+    }
+
+    .img {
+      &-qr {
+        max-width: 250px;
+        margin: 0 auto;
+        border-radius: 1rem;
+      }
+
+      &-mascot {
+        @include media-breakpoint-down(md) {
+          max-height: 200px;
+        }
+      }
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 10vh 0;
+      .app {
+        &-icon {
+          margin-right: 1rem;
+        }
+        &-detail {
+          strong {
+            font-size: 1.5em;
+            margin-top: -0.25em;
+          }
+        }
+      }
+    }
+  }
 }

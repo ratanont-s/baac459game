@@ -1,16 +1,10 @@
+@import './_fonts.scss';
 @import './variables';
 @import './bootstrap/bootstrap.scss';
 @import './buttons';
 @import './footer';
 @import './landing';
 
-// body {
-//     padding: 1em;
-//     @include gradient-directional($start-color: $primary, $end-color: #98d936, $deg: 45deg);
-
-//     main {
-//         border-top-left-radius: 1em;
-//         border-top-right-radius: 1em;
-//         overflow: hidden;
-//     }
-// }
+.text-indent{
+    text-indent: 2rem;
+}
