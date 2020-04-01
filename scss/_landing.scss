@@ -1,63 +1,63 @@
 section {
   &.top {
     position: relative;
+    padding: 1rem;
 
-        .app {
-          display: flex;
-          align-items: center;
+    .app {
+      display: flex;
+      align-items: center;
 
-          @include media-breakpoint-down(md) {
-            margin-bottom: 1.5rem;
-          }
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1.5rem;
+      }
 
-          &-icon {
-            text-align: center;
-            margin-right: 0.5rem;
+      &-icon {
+        text-align: center;
+        margin-right: 0.5rem;
 
-            @include media-breakpoint-up(lg) {
-              margin-right: 1.5rem;
-            }
-
-            img {
-              width: 4rem;
-              height: 4rem;
-              object-fit: cover;
-              border-radius: 1rem;
-              margin-bottom: 0.5rem;
-              box-shadow: 0 0.25rem 0.25rem rgba(black, 0.15);
-            }
-          }
-          &-title {
-            font-size: 0.8rem;
-            line-height: 1;
-          }
-
-          &-detail {
-            line-height: normal;
-
-            @include media-breakpoint-up(lg) {
-              font-size: 1.25rem;
-            }
-
-            strong {
-              display: block;
-              font-size: 1.25em;
-            }
-          }
+        @include media-breakpoint-up(lg) {
+          margin-right: 1.5rem;
         }
+
+        img {
+          width: 4rem;
+          height: 4rem;
+          object-fit: cover;
+          border-radius: 1rem;
+          margin-bottom: 0.5rem;
+          box-shadow: 0 0.25rem 0.25rem rgba(black, 0.15);
+        }
+      }
+
+      &-title {
+        font-size: 0.8rem;
+        line-height: 1;
+      }
+
+      &-detail {
+        line-height: normal;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 1.25rem;
+        }
+
+        strong {
+          display: block;
+          font-size: 1.25em;
+        }
+      }
+    }
+
     .top {
       &-bg {
         width: 100%;
       }
 
       &-content {
-          position: relative;
-        .btn {
-          box-shadow: 6px 8px 0 rgba(black, 0.25);
+        position: relative;
 
-          &:hover {
-            box-shadow: 8px 10px 0 rgba(black, 0.25);
-          }
+        .btn {
+          box-shadow: $box-shadow;
         }
       }
 
@@ -88,13 +88,14 @@ section {
           margin-top: auto;
         }
       }
-      .app{
-          &-icon{
-              img{
-                  width: 5rem;
-                  height: 5rem;
-              }
+
+      .app {
+        &-icon {
+          img {
+            width: 5rem;
+            height: 5rem;
           }
+        }
       }
     }
 
@@ -143,57 +144,68 @@ section {
   }
 
   &.preview {
-      position: relative;
-      color: $white;
-      @include gradient-directional($start-color: $primary, $end-color: #98D936, $deg: 45deg);
-      #particles-js{
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-      }
-      .bg{
-          &-top{
-            overflow: hidden;
-            text-align: center;
-            margin-top: -1px;
-            padding-bottom: 2rem;
-            svg{
-                filter: drop-shadow(0 .5rem 1rem rgba(black,.16));
-            }
-        }
-        &-bottom{
-            overflow: hidden;
-            text-align: center;
-            margin-bottom: -1px;
-            padding-top: 2rem;
-            svg{
-                transform: scale(-1);
-                filter: drop-shadow(0 -.5rem 1rem rgba(black,.16));
-                .a{
-                    fill: $light;
-                }
-            }
+    position: relative;
+    color: $white;
+    @include gradient-directional($start-color: $primary, $end-color: #98D936, $deg: 45deg);
+
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bg {
+      &-top {
+        overflow: hidden;
+        text-align: center;
+        margin-top: -1px;
+        padding-bottom: 2rem;
+
+        svg {
+          filter: drop-shadow(0 .5rem 1rem rgba(black, .16));
         }
       }
+
+      &-bottom {
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: -1px;
+        padding-top: 2rem;
+
+        svg {
+          transform: scale(-1);
+          filter: drop-shadow(0 -.5rem 1rem rgba(black, .16));
+
+          .a {
+            fill: $light;
+          }
+        }
+      }
+    }
+
     .mobile {
       background: $white url("../img/iPhone.svg") no-repeat center center/contain;
       padding: 2% 10% 2% 12%;
       box-shadow: $box-shadow;
       border-radius: 1.25rem;
       margin-bottom: 1.5rem;
+
       &-img {
         width: 100%;
         border-radius: 4px;
       }
+
       &-slider {
         margin-bottom: -6px;
+
         &-item {
           img {
             border-radius: 4px;
           }
         }
+
         .slick {
           &-arrow {
             top: auto;
@@ -201,24 +213,33 @@ section {
             z-index: 1;
             width: 2rem;
             height: 2rem;
+
             &::before {
               display: none;
             }
           }
+
           &-prev {
             left: 1rem;
           }
+
           &-next {
             right: 1rem;
           }
+
           &-dots {
             bottom: -2rem;
+
             li button::before {
               color: $white;
             }
           }
         }
       }
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1.75rem;
     }
   }
 
@@ -235,6 +256,14 @@ section {
       width: 100%;
       height: 100%;
       background: url("../img/bg-app.png") no-repeat center center/contain;
+    }
+
+    .text-box {
+      svg {
+        .a {
+          fill: rgba($primary, .15);
+        }
+      }
     }
 
     .app {
@@ -260,6 +289,7 @@ section {
           box-shadow: 0 0.25rem 0.25rem rgba(black, 0.15);
         }
       }
+
       &-title {
         font-size: 0.8rem;
         line-height: 1;
@@ -288,12 +318,15 @@ section {
         }
       }
     }
+
     @include media-breakpoint-up(lg) {
-        padding: 10vh 0;
+      padding: 10vh 0;
+
       .app {
         &-icon {
           margin-right: 1rem;
         }
+
         &-detail {
           strong {
             font-size: 1.5em;
