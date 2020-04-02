@@ -259,6 +259,8 @@ section {
     }
 
     .text-box {
+      font-weight: bold;
+      font-size: 1.25em;
       svg {
         .a {
           fill: rgba($primary, .15);
